@@ -1,0 +1,20 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Local datasets (Hugging Face save_to_disk, arrows, etc.)
+dataset/
+
+# Generic local caches (adjust if your cache lives elsewhere)
+.cache/
+cache/
+
+# Training outputs
+training_output_gsm8k/
+
+# Anything that ends with .png, .pdf
+*.png
+*.pdf
