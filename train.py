@@ -72,6 +72,7 @@ if __name__ == "__main__":
     # Define the trainer
     train_set = load_from_disk("dataset/gsm8k/train_converted")
     val_set = load_from_disk("dataset/gsm8k/val_converted")
+    print(train_set, val_set)
     trainer = SFTTrainer(
         model=model,
         args=sft_config,

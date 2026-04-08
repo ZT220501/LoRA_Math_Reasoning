@@ -3,7 +3,11 @@ import matplotlib as mpl
 import json
 import os
 
-load_dir = "training_output_gsm8k/config_initial/checkpoint-10000"
+# load_dir = "training_output_gsm8k/config_initial/checkpoint-10000"
+# load_dir = "training_output_gsm8k/config_2026_04_07_00_37_45/checkpoint-2000"
+# load_dir = "training_output_gsm8k/config_2026_04_07_12_26_52/checkpoint-10000"
+# load_dir = "training_output_gsm8k/config_2026_04_07_20_10_46/checkpoint-1500"
+load_dir = "training_output_gsm8k/config_2026_04_07_21_05_32/checkpoint-1200"
 with open(os.path.join(load_dir, "trainer_state.json"), "r") as f:
     state = json.load(f)
 

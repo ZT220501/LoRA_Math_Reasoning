@@ -1,10 +1,10 @@
 model:
-  name: "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
+  name: "Qwen/Qwen3-1.7B"
   torch_dtype: "bfloat16"
 
 lora:
-  r: 16
-  lora_alpha: 32
+  r: 32
+  lora_alpha: 64
   lora_dropout: 0.1
   bias: "none"
   task_type: "CAUSAL_LM"
@@ -18,16 +18,24 @@ sft:
   per_device_eval_batch_size: 8
   gradient_accumulation_steps: 4
   optim: "adamw_torch"
-  learning_rate: 0.0001
+  # learning_rate: 0.0001
+  learning_rate: 5.0e-6
   lr_scheduler_type: "cosine"
   num_train_epochs: 1
   logging_steps: 100
   fp16: true
   gradient_checkpointing: true
-  save_steps: 1000
-  eval_steps: 1000
+  save_steps: 100
+  eval_steps: 100
   save_strategy: "steps"
   eval_strategy: "steps"
-  max_steps: 10000
+  max_steps: 1500
   dataset_text_field: "text"
   packing: false
+
+inference:
+  max_new_tokens:  38912
+  temperature: 1.0
+  top_p: 0.95
+  top_k: 0            # Disable top-k sampling; same as top_k=-1
+  sampling_budget: 1
